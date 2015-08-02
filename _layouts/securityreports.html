@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+
+<body>
+  <script type="text/javascript">
+    var displayReport = function (id) {
+      if (this.id !== '') {
+        $(this.id).css('display', 'none')
+      }
+      this.id = '#' + id
+      $(this.id).css('display', 'block')
+    }
+    $(document).ready(function () {
+      displayReport("1")
+    })
+  </script>
+  <header>
+    <div class="logo">
+      <img src="{{site.logo}}" alt="Sunset Inc." width="150px" height="auto" />
+    </div>
+    <section class="header-info">
+      <div class="security-advice">
+        <p>
+          <i class="fa fa-exclamation-triangle"></i>
+          {{site.description}}
+          <i class="fa fa-exclamation-triangle"></i>
+        </p>
+      </div>
+      <div class="title">
+        <h1>{{site.title}}</h1>
+      </div>
+    </section>
+  </header>
+
+  {{ content }}
+
+</body>
+</html>
